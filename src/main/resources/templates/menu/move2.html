@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{common/layout :: head('체력 향상 & 맞춤 체력 운동')}"></head>
+<body>
+<div class="app">
+    <header th:replace="~{common/layout :: subHeader('맞춤 PT')}"></header>
+
+    <main class="page">
+        <img src="/images/move2-1.jpg" alt="체력 향상 운동" class="page-hero">
+
+        <h2 class="page-title">체력 향상 &amp; 맞춤 체력 운동</h2>
+        <p class="page-lead">#근력강화 #코어강화 #다이어트</p>
+
+        <article class="card prose">
+            <p>건강체력(유연성, 근력, 근지구력, 심폐지구력, 신체조성)과 운동체력(민첩성, 평형성, 협응성 등) 평가를 통해 내 몸의 부족한 부분을 개선시키고, 몸의 버팀목이 되는 코어와 대근육을 강화합니다.</p>
+            <p>내 몸의 장단점을 알게 되어 내 몸을 효율적으로 사용할 수 있게 만들어 줍니다.</p>
+            <p>더 많은 스포츠를 즐길 수 있게 되며 부상의 위험도 줄어들게 됩니다.</p>
+        </article>
+
+        <div class="photo-stack">
+            <img src="/images/move2-2.jpg" alt="체력 향상 운동" loading="lazy">
+        </div>
+
+        <div class="cta-card">
+            <p>이 프로그램이 궁금하다면?</p>
+            <div class="cta-row">
+                <a href="tel:010-8675-6286" class="btn btn--primary">전화 상담</a>
+                <a href="https://pf.kakao.com/_JKrxnn/chat" target="_blank" rel="noopener" class="btn btn--kakao">카톡 문의</a>
+            </div>
+        </div>
+    </main>
+
+    <nav th:replace="~{common/layout :: bottomBar('')}"></nav>
+</div>
+<script src="/js/common/main.js"></script>
+</body>
+</html>

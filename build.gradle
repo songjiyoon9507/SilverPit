@@ -1,0 +1,42 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '4.1.2'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.silverfitterpan.mobileweb'
+version = '0.0.1-SNAPSHOT'
+
+// Java 25 (LTS) - 로컬 PC 와 Linux 서버 모두 JDK 25 사용
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(25)
+	}
+}
+
+// 실행 가능한 bootJar 만 생성 (plain jar 생성 안 함)
+jar {
+	enabled = false
+}
+
+// 빌드 시 생성되는 실행 jar 이름을 silver.jar 로 고정
+bootJar {
+	archiveFileName = 'silver.jar'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-webmvc'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

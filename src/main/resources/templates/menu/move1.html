@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{common/layout :: head('체형 교정 & 움직임 개선')}"></head>
+<body>
+<div class="app">
+    <header th:replace="~{common/layout :: subHeader('맞춤 PT')}"></header>
+
+    <main class="page">
+        <img src="/images/move1-1.jpg" alt="체형 교정 운동" class="page-hero">
+
+        <h2 class="page-title">체형 교정 &amp; 움직임 개선</h2>
+        <p class="page-lead">#체형교정 #재활 #균형감각</p>
+
+        <article class="card prose">
+            <p>잘못된 자세와 습관으로 인한 신체 불균형을 찾아 근육의 기능을 회복하고 관절의 움직임을 향상시킵니다.</p>
+            <p>이와 함께 우리에게 중요한 신체균형과 평형성, 협응력 등을 강화시켜 부상 위험을 줄여줍니다.</p>
+            <p>몸의 불균형이 해소되어 움직임이 즐거워지고 일상생활을 보다 더 적극적으로 할 수 있게 되어 몸과 마음에 활력을 줍니다.</p>
+            <p><strong>자연스럽게 살이 빠지는 건 보너스~!</strong></p>
+        </article>
+
+        <div class="photo-stack">
+            <img src="/images/move1-2.jpg" alt="체형 교정 운동" loading="lazy">
+        </div>
+
+        <div class="cta-card">
+            <p>이 프로그램이 궁금하다면?</p>
+            <div class="cta-row">
+                <a href="tel:010-8675-6286" class="btn btn--primary">전화 상담</a>
+                <a href="https://pf.kakao.com/_JKrxnn/chat" target="_blank" rel="noopener" class="btn btn--kakao">카톡 문의</a>
+            </div>
+        </div>
+    </main>
+
+    <nav th:replace="~{common/layout :: bottomBar('')}"></nav>
+</div>
+<script src="/js/common/main.js"></script>
+</body>
+</html>

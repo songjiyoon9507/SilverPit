@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{common/layout :: head('프로그램 진행 순서')}"></head>
+<body>
+<div class="app">
+    <header th:replace="~{common/layout :: subHeader('프로그램 진행 순서')}"></header>
+
+    <main class="page">
+        <p class="eyebrow">PROCESS</p>
+        <h2 class="section-title">이렇게 진행돼요</h2>
+        <p class="section-desc">단계를 누르면 자세한 내용을 볼 수 있어요.</p>
+
+        <ol th:replace="~{common/layout :: processSteps}"></ol>
+
+        <div class="photo-stack" style="margin-top: 16px;">
+            <img src="/images/progress1.jpg" alt="프로그램 진행 모습" loading="lazy">
+            <img src="/images/progress2.jpg" alt="프로그램 진행 모습" loading="lazy">
+        </div>
+    </main>
+
+    <nav th:replace="~{common/layout :: bottomBar('')}"></nav>
+</div>
+<script src="/js/common/main.js"></script>
+</body>
+</html>

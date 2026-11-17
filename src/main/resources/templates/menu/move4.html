@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{common/layout :: head('철인3종 몸 만들기')}"></head>
+<body>
+<div class="app">
+    <header th:replace="~{common/layout :: subHeader('맞춤 PT')}"></header>
+
+    <main class="page">
+        <img src="/images/move4-1.jpg" alt="철인3종 훈련" class="page-hero">
+
+        <h2 class="page-title">철인3종 몸 만들기</h2>
+        <p class="page-lead">#철인3종 #지구력 #새로운도전</p>
+
+        <article class="card prose">
+            <p>철인은 60부터라는 말이 있습니다. 아직 늦지 않았습니다.</p>
+            <p>한 번뿐인 인생, 평생을 함께 해온 내 몸을 믿고 극한의 도전을 해 보는 것도 의미 있지 않을까요?</p>
+            <p><strong>체계화된 프로그램으로 철인3종을 할 수 있는 슈퍼맨 몸 만들기 도전!!</strong></p>
+        </article>
+
+        <div class="photo-stack">
+            <img src="/images/move4-2.jpg" alt="철인3종 훈련" loading="lazy">
+            <img src="/images/move4-3.jpg" alt="철인3종 훈련" loading="lazy">
+        </div>
+
+        <div class="cta-card">
+            <p>이 프로그램이 궁금하다면?</p>
+            <div class="cta-row">
+                <a href="tel:010-8675-6286" class="btn btn--primary">전화 상담</a>
+                <a href="https://pf.kakao.com/_JKrxnn/chat" target="_blank" rel="noopener" class="btn btn--kakao">카톡 문의</a>
+            </div>
+        </div>
+    </main>
+
+    <nav th:replace="~{common/layout :: bottomBar('')}"></nav>
+</div>
+<script src="/js/common/main.js"></script>
+</body>
+</html>

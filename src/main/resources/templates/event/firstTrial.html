@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>첫 방문 고객 이벤트</title>
+    <link rel="icon" type="image/png" href="/images/simpleLogo.png" />
+    <!-- main css -->
+    <link rel="stylesheet" href="/css/common/main.css">
+    <!-- event css -->
+    <link rel="stylesheet" href="/css/event/event.css">
+</head>
+<body>
+    <div class="event-container">
+        <div class="event-title">첫 방문 고객 이벤트</div>
+        <div class="event-description">
+            첫 방문 고객에게 드리는 1회 체험 이벤트!<br>
+            방문 PT를 할인된 가격에 만나보세요.
+        </div>
+      
+        <div class="event-details">
+            <strong>✅ 할인 혜택</strong><br>
+            - 1회 체험 PT: <del>₩85,000</del> → <strong>₩39,000 (반값 할인)</strong><br>
+        
+            <!-- <strong>📅 이벤트 기간</strong><br>
+            2025년 5월 1일 ~ 2025년 5월 31일<br><br> -->
+        
+            <strong>🙋 문의하기</strong><br>
+
+            <a href="http://pf.kakao.com/_iExjfn/chat" target="_blank" style="text-decoration: none;">
+                <img src="/images/questionPc.png" alt="카카오톡 아이콘" style="height: 50px; margin-right: 8px; margin-top: 20px;" />
+            </a>
+        </div>
+      
+        <a href="tel:010-8675-6286" class="apply-button">전화 걸기</a>
+    </div>
+
+    <!-- <th:block th:replace="~{common/footer}"></th:block> -->
+</body>
+</html>

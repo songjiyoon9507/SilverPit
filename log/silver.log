@@ -1,0 +1,46 @@
+2026-11-17 21:24:56.832  INFO 34460 --- [restartedMain] c.s.m.SilverFitterPanApplication         : Starting SilverFitterPanApplication using Java 25.0.4.1 with PID 34460 (C:\workspace\SilverPit\bin\main started by user in C:\workspace\SilverPit)
+2026-11-17 21:24:56.833  INFO 34460 --- [restartedMain] c.s.m.SilverFitterPanApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-11-17 21:24:57.022  INFO 34460 --- [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-11-17 21:24:57.030  INFO 34460 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-17 21:24:57.041  INFO 34460 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
+2026-11-17 21:24:57.108  INFO 34460 --- [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 273 ms
+2026-11-17 21:24:57.252  INFO 34460 --- [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-11-17 21:24:57.254  INFO 34460 --- [restartedMain] c.s.m.SilverFitterPanApplication         : Started SilverFitterPanApplication in 0.488 seconds (process running for 865.777)
+2026-11-17 21:24:57.271  INFO 34460 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+    None
+
+
+Negative matches:
+-----------------
+
+   LocalDevToolsAutoConfiguration.LiveReloadConfiguration:
+      Did not match:
+         - @ConditionalOnBooleanProperty (spring.devtools.livereload.enabled=true) did not find property 'spring.devtools.livereload.enabled' (OnPropertyCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2026-11-17 21:25:04.758  INFO 34460 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-11-17 21:25:04.764  INFO 34460 --- [Thread-7] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-17 21:25:04.773  INFO 34460 --- [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete

@@ -1,0 +1,89 @@
+<configuration scan="true" scanPeriod="60 seconds">
+	<!-- 1분(60초) 마다 설정 변경 사항을 파악한 후 갱신-->
+	<!-- application-local.properties / application-prod.properties 에 정의
+		log.config.path(로그 파일 저장 경로)
+		log.config.fileName(로그 파일 이름)
+	-->
+
+	<!-- Spring 환경(Environment)에서 값을 읽음 -> 실행 프로필(local/prod)의 값이 반영됨 -->
+	<springProperty name="logPath" source="log.config.path" defaultValue="./log/" />
+	<springProperty name="fileName" source="log.config.fileName" defaultValue="silver" />
+	<property name="maxHistory" value="30" />
+	<property name="maxFileSize" value="10MB" />
+
+	<!--============================ 스프링 부트 기본 로그 설정 ============================-->
+	<conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
+	<conversionRule conversionWord="wex" converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter" />
+	<conversionRule conversionWord="wEx" converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter" />
+
+	<property name="CONSOLE_LOG_PATTERN" value="${CONSOLE_LOG_PATTERN:-%clr(%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss.SSS}}){green} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}"/>
+	<property name="CONSOLE_LOG_CHARSET" value="${CONSOLE_LOG_CHARSET:-default}"/>
+  
+	<property name="FILE_LOG_PATTERN" value="${FILE_LOG_PATTERN:-%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss.SSS}} ${LOG_LEVEL_PATTERN:-%5p} ${PID:- } --- [%t] %-40.40logger{39} : %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}"/>
+	<property name="FILE_LOG_CHARSET" value="${FILE_LOG_CHARSET:-default}"/>
+  
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>${CONSOLE_LOG_PATTERN}</pattern>
+			<charset>${CONSOLE_LOG_CHARSET}</charset>
+		</encoder>
+	</appender>
+
+	<include resource="org/springframework/boot/logging/logback/file-appender.xml" />
+	<logger name="org.apache.catalina.startup.DigesterFactory" level="ERROR"/>
+	<logger name="org.apache.catalina.util.LifecycleBase" level="ERROR"/>
+	<logger name="org.apache.coyote.http11.Http11NioProtocol" level="WARN"/>
+	<logger name="org.apache.sshd.common.util.SecurityUtils" level="WARN"/>
+	<logger name="org.apache.tomcat.util.net.NioSelectorPool" level="WARN"/>
+	<logger name="org.eclipse.jetty.util.component.AbstractLifeCycle" level="ERROR"/>
+	<logger name="org.hibernate.validator.internal.util.Version" level="WARN"/>
+	<logger name="org.springframework.boot.actuate.endpoint.jmx" level="WARN"/>
+	<!--============================ 스프링 부트 기본 로그 설정 ============================-->
+
+	<!-- 로그를 파일로 저장 -->
+	<appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+		<!-- 오늘 쌓이는 활성 로그 파일 (예: silver.log) -->
+		<file>${logPath}${fileName}.log</file>
+
+		<!-- Rolling 정책 -->
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+
+			<!-- 하루가 지나면 활성 파일을 아래 이름으로 보관 (예: silver.2026-09-21_0.log) -->
+			<fileNamePattern>${logPath}${fileName}.%d{yyyy-MM-dd}_%i.log</fileNamePattern>
+          
+			<!-- 로그파일 최대 보관일 -->
+			<maxHistory>${maxHistory}</maxHistory>
+          
+			<!-- 로그 파일당 최고 용량 kb, mb, gb -->
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>${maxFileSize}</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+      
+		<!-- 출력되는 로그의 패턴, 인코딩-->
+		<encoder>
+			<pattern>${FILE_LOG_PATTERN}</pattern>
+			<charset>${FILE_LOG_CHARSET}</charset>
+		</encoder>
+	</appender>
+
+	<!--
+		* 로그 레벨 : TRACE < DEBUIG < INFO < WARN < ERROR
+		(로그 레벨 지정 시 지정된 레벨 + 상위 레벨만 출력됨)
+	-->
+
+	<!-- 기본 로그 출력 레벨, 로그 작성 객체(appender) 지정-->
+	<root level="INFO">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="ROLLING" />
+	</root>
+
+	<!-- 별로 로그 출력 설정 시 작성하는 태그 -->
+	<!--
+	<logger name="com.silverfitterpan.mobileweb" level="DEBUG">
+		<appender-ref ref="ROLLING" />
+	</logger>
+	-->
+
+</configuration>

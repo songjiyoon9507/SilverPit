@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{common/layout :: head('전체 메뉴')}"></head>
+<body>
+<div class="app">
+    <header th:replace="~{common/layout :: subHeader('전체 메뉴')}"></header>
+
+    <main class="page">
+        <section class="menu-group">
+            <h2 class="menu-group-title">실버핏터팬</h2>
+            <ul class="menu-list">
+                <li><a href="/#service">수업 형태</a></li>
+                <li><a href="/#intro">실버핏터팬 소개</a></li>
+                <li><a href="/#founder">대표 소개</a></li>
+                <li><a href="/#sister">자매품 · 같이가 손피터</a></li>
+            </ul>
+        </section>
+
+        <section class="menu-group">
+            <h2 class="menu-group-title">목적별 맞춤 PT</h2>
+            <ul class="menu-list">
+                <li><a href="/menu/move1">체형 교정 &amp; 움직임 개선</a></li>
+                <li><a href="/menu/move2">체력 향상 &amp; 맞춤 체력 운동</a></li>
+                <li><a href="/menu/move3">호신술 &amp; 근력 강화</a></li>
+                <li><a href="/menu/move4">철인3종 몸 만들기</a></li>
+            </ul>
+        </section>
+
+        <section class="menu-group">
+            <h2 class="menu-group-title">안내</h2>
+            <ul class="menu-list">
+                <li><a href="/menu/visitPT">방문 PT 소개</a></li>
+                <li><a href="/menu/programOrder">프로그램 진행 순서</a></li>
+                <li><a href="/#contact">상담 문의</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <nav th:replace="~{common/layout :: bottomBar('menu')}"></nav>
+</div>
+<script src="/js/common/main.js"></script>
+</body>
+</html>
